@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV y portafolio profesional de Maik — Ingeniería de Software y Gaming Competitivo." />
+  <meta name="theme-color" content="#000000" />
 
-  <title>Maik | Innovación & Tecnología</title>
-  <meta
-    name="description"
-    content="CV personal y portafolio profesional de Tu Nombre."
-  >
+  <title>Maik — Software Engineer & Competitive Gamer</title>
 
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0b0b0b;
-      --card: #101010;
-      --text: #f5f5f5;
-      --muted: #929292;
-      --accent: #ffffff;
-      --line: #242424;
-      --max-width: 1180px;
+      --bg: #f5f5f7;
+      --bg-secondary: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --border: rgba(0, 0, 0, 0.08);
+      --card: rgba(255, 255, 255, 0.72);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark {
+      --bg: #000000;
+      --bg-secondary: #101010;
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --accent: #2997ff;
+      --accent-hover: #40a9ff;
+      --border: rgba(255, 255, 255, 0.1);
+      --card: rgba(25, 25, 25, 0.72);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     * {
@@ -33,10 +44,23 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.5;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
     }
 
     a {
@@ -44,461 +68,588 @@
       text-decoration: none;
     }
 
-    /* NAVBAR */
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding: 22px 5%;
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      background: color-mix(
+        in srgb,
+        var(--bg) 78%,
+        transparent
+      );
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      height: 52px;
+      margin: auto;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: rgba(5, 5, 5, 0.75);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      justify-content: space-between;
+
+      padding: 0 20px;
     }
 
     .logo {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: -0.5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 28px;
       list-style: none;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .nav-links a {
-      color: #aaa;
-      transition: .3s;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--text);
     }
 
-    /* HERO */
+    .theme-btn {
+      border: none;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 17px;
+      padding: 5px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 120px 5% 80px;
-      background:
-        radial-gradient(circle at 75% 35%, #1d1d1d 0, transparent 30%),
-        radial-gradient(circle at 20% 80%, #111 0, transparent 30%),
-        #050505;
-    }
+      justify-content: center;
+      text-align: center;
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      right: -200px;
-      top: 100px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 70px rgba(255,255,255,.015),
-        0 0 0 140px rgba(255,255,255,.01);
+      padding: 120px 20px 80px;
+
+      background:
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(0, 113, 227, 0.12),
+          transparent 35%
+        ),
+        var(--bg);
     }
 
     .hero-content {
-      max-width: var(--max-width);
-      width: 100%;
-      margin: auto;
-      position: relative;
-      z-index: 2;
+      max-width: 900px;
     }
 
     .eyebrow {
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 12px;
-      margin-bottom: 25px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(55px, 9vw, 120px);
-      line-height: .9;
-      letter-spacing: -6px;
-      max-width: 900px;
-      margin-bottom: 35px;
+    .hero h1 {
+      font-size: clamp(64px, 11vw, 120px);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 700;
+      margin-bottom: 30px;
     }
 
     .hero h1 span {
-      color: #777;
+      background: linear-gradient(
+        90deg,
+        #0071e3,
+        #7c3aed,
+        #ec4899
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-description {
-      max-width: 650px;
-      color: #aaa;
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 25px;
-      border: 1px solid #444;
-      text-transform: uppercase;
-      font-size: 11px;
-      letter-spacing: 2px;
-      transition: .3s;
-    }
-
-    .btn.primary {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      border-color: white;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 120px 5%;
-    }
-
-    .container {
-      max-width: var(--max-width);
+      max-width: 680px;
       margin: auto;
-    }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: flex-end;
-      margin-bottom: 60px;
-    }
-
-    .section-number {
-      color: #555;
-      font-size: 12px;
-      letter-spacing: 3px;
-    }
-
-    h2 {
-      font-size: clamp(38px, 6vw, 72px);
-      letter-spacing: -3px;
-      line-height: 1;
-    }
-
-    .section-intro {
-      max-width: 420px;
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.3;
       color: var(--muted);
+      letter-spacing: -0.02em;
     }
 
-    /* ABOUT */
-    .about {
-      background: var(--bg-soft);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+
+      margin-top: 40px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 80px;
+    .button {
+      padding: 13px 23px;
+      border-radius: 999px;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
-    .about-text {
-      font-size: 24px;
-      line-height: 1.5;
+    .button:hover {
+      transform: translateY(-2px);
     }
 
-    .about-text strong {
+    .button-primary {
+      background: var(--accent);
       color: white;
     }
 
-    .stats {
+    .button-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 120px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 60px;
+    }
+
+    .section-title span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 24px;
     }
 
-    .stat {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
+    .glass-card {
+      padding: 35px;
+      border-radius: 28px;
+
+      background: var(--card);
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
-    .stat-number {
-      font-size: 42px;
-      font-weight: 700;
+    .glass-card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      letter-spacing: -0.03em;
     }
 
-    .stat-label {
+    .glass-card p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 17px;
     }
 
-    /* SKILLS */
-    .skills {
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      gap: 18px;
     }
 
     .skill {
-      border: 1px solid var(--line);
-      padding: 30px 20px;
-      background: var(--card);
-      transition: .3s;
+      padding: 28px 22px;
+      border-radius: 22px;
+
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .skill:hover {
-      border-color: #666;
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
     }
 
-    .skill-number {
-      color: #555;
-      font-size: 11px;
+    .skill-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
     }
 
     .skill h3 {
-      margin: 25px 0 10px;
       font-size: 18px;
+      margin-bottom: 6px;
     }
 
     .skill p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project {
+      position: relative;
+      min-height: 340px;
+
+      padding: 34px;
+
+      border-radius: 30px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(0, 113, 227, 0.16),
+          transparent 60%
+        ),
+        var(--card);
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+    }
+
+    .project-number {
+      position: absolute;
+      top: 25px;
+      right: 28px;
+
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .project h3 {
+      font-size: 34px;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* =========================
+       GAMING
+    ========================= */
+
+    .gaming {
+      background: var(--bg-secondary);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .game {
+      min-height: 190px;
+
+      border-radius: 24px;
+
+      padding: 22px;
+
+      background: var(--bg);
+      border: 1px solid var(--border);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .game:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-icon {
+      font-size: 35px;
+      margin-bottom: auto;
+    }
+
+    .game h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .game span {
       color: var(--muted);
       font-size: 13px;
     }
 
-    /* EXPERIENCE */
-    .experience {
-      background: #080808;
-    }
+    /* =========================
+       EXPERIENCE
+    ========================= */
 
     .timeline {
-      border-top: 1px solid var(--line);
+      border-left: 2px solid var(--border);
+      padding-left: 30px;
     }
 
-    .job {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 50px;
-      padding: 35px 0;
-      border-bottom: 1px solid var(--line);
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
     }
 
-    .job-date {
-      color: #666;
-      font-size: 12px;
-      letter-spacing: 1px;
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+      left: -39px;
+      top: 5px;
+
+      width: 14px;
+      height: 14px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--bg);
     }
 
-    .job h3 {
-      font-size: 25px;
-      margin-bottom: 5px;
+    .timeline-date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 7px;
     }
 
-    .company {
-      color: #999;
-      margin-bottom: 15px;
+    .timeline h3 {
+      font-size: 27px;
+      margin-bottom: 8px;
     }
 
-    .job p {
-      color: #888;
+    .timeline p {
+      color: var(--muted);
       max-width: 700px;
     }
 
-    /* PORTFOLIO */
-    .portfolio {
-      background: var(--bg);
-    }
+    /* =========================
+       CONTACT
+    ========================= */
 
-    .solutions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .solution {
-      min-height: 350px;
-      padding: 40px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.04), transparent 50%),
-        #0b0b0b;
-      position: relative;
-      overflow: hidden;
-      transition: .4s;
-    }
-
-    .solution:hover {
-      transform: translateY(-8px);
-      border-color: #555;
-    }
-
-    .solution::before {
-      content: attr(data-number);
-      position: absolute;
-      right: 30px;
-      top: 20px;
-      font-size: 90px;
-      font-weight: 700;
-      color: rgba(255,255,255,.025);
-    }
-
-    .solution-tag {
-      color: #777;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .solution h3 {
-      font-size: 34px;
-      margin: 50px 0 15px;
-      max-width: 400px;
-    }
-
-    .solution p {
-      color: #888;
-      max-width: 500px;
-    }
-
-    .solution a {
-      display: inline-block;
-      margin-top: 30px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-bottom: 1px solid #555;
-      padding-bottom: 5px;
-    }
-
-    /* CONTACT */
     .contact {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at center, #151515 0, #050505 50%);
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-content {
-      width: 100%;
       text-align: center;
     }
 
     .contact h2 {
-      max-width: 900px;
-      margin: 0 auto 30px;
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 25px;
     }
 
     .contact p {
-      color: #888;
-      margin-bottom: 40px;
+      color: var(--muted);
+      font-size: 20px;
+      margin-bottom: 35px;
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .contact-links a {
-      color: #aaa;
-      font-size: 13px;
-      border-bottom: 1px solid #333;
-      padding-bottom: 5px;
+    .contact-link {
+      padding: 13px 20px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--border);
+      background: var(--card);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    /* FOOTER */
+    .contact-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
-      padding: 25px 5%;
-      border-top: 1px solid var(--line);
-      color: #555;
-      font-size: 11px;
-      display: flex;
-      justify-content: space-between;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      padding: 30px 20px;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--muted);
+      text-align: center;
+
+      font-size: 13px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 800px) {
+    /* =========================
+       ANIMATION
+    ========================= */
 
+    .fade-up {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
       .nav-links {
         display: none;
       }
 
-      h1 {
-        letter-spacing: -3px;
+      section {
+        padding: 80px 18px;
       }
 
-      .about-grid {
+      .about-grid,
+      .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
       }
 
-      .skills {
+      .skills-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .solutions {
-        grid-template-columns: 1fr;
+      .games-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero h1 {
+        font-size: 70px;
       }
 
-      .job {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .solution {
-        min-height: 300px;
+      .hero-description {
+        font-size: 20px;
       }
     }
 
-    @media (max-width: 500px) {
-      section {
-        padding: 80px 6%;
-      }
-
-      .skills {
+    @media (max-width: 450px) {
+      .skills-grid,
+      .games-grid {
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      .solution {
-        padding: 30px;
+      .hero h1 {
+        font-size: 58px;
       }
     }
   </style>
@@ -506,368 +657,625 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#" class="logo">TN.</a>
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
-    <ul class="nav-links">
-      <li><a href="#about">Perfil</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#portfolio">Soluciones</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
+  <nav>
+    <div class="nav-container">
+
+      <a href="#inicio" class="logo">Maik.</a>
+
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Skills</a></li>
+        <li><a href="#portfolio">Portafolio</a></li>
+        <li><a href="#gaming">Gaming</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        aria-label="Cambiar tema"
+      >
+        ◐
+      </button>
+
+    </div>
   </nav>
 
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero" id="inicio">
+
+    <div class="hero-content fade-up">
 
       <div class="eyebrow">
-        Innovación · Tecnología · Estrategia
+        Ingeniería de Software · Gaming Competitivo
       </div>
 
       <h1>
-        Maik<br>
-        <span>Jugador porfesional.</span>
+        Hola, soy <span>Maik.</span>
       </h1>
 
       <p class="hero-description">
-        Profesional en overwatch, minecraft, phasmophobia y valorant.
+        Construyo soluciones digitales con código, creatividad
+        y pensamiento estratégico. Software Engineer de día,
+        gamer competitivo cuando toca ganar.
       </p>
 
-      <div class="buttons">
-        <a href="#portfolio" class="btn primary">
-          Ver soluciones
+      <div class="hero-buttons">
+
+        <a
+          href="#portfolio"
+          class="button button-primary"
+        >
+          Ver mi portafolio
         </a>
 
-        <a href="#contact" class="btn">
-          Contactar
+        <a
+          href="#contacto"
+          class="button button-secondary"
+        >
+          Contactarme
         </a>
+
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
+  <!-- =========================
+       SOBRE MI
+  ========================== -->
+
+  <section id="sobre-mi">
+
     <div class="container">
 
-      <div class="section-header">
-        <div>
-          <div class="section-number">01 / PERFIL</div>
-          <h2>Think big.</h2>
-        </div>
-
-        <p class="section-intro">
-          Un gran liderazgo y planeación.
-        </p>
+      <div class="section-label">
+        Perfil
       </div>
+
+      <h2 class="section-title">
+        Tecnología con propósito.
+        <span>Competencia con pasión.</span>
+      </h2>
 
       <div class="about-grid">
 
-        <div class="about-text">
-          Mi objetivo es lograr lo que nadie ah logrado con  
-          <strong>ESFUERZO</strong>.
-          Me interesa especialmente la intersección entre
-          tecnología, automatización, inteligencia artificial
-          y negocios.
-        </div>
+        <article class="glass-card">
 
-        <div class="stats">
+          <h3>Ingeniería de Software</h3>
 
-          <div class="stat">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Años de experiencia</div>
-          </div>
+          <p>
+            Mi enfoque principal está en la ingeniería de software:
+            diseño, desarrollo y optimización de soluciones digitales.
+            Me interesa crear sistemas escalables, eficientes y
+            fáciles de mantener, combinando lógica, creatividad
+            y buenas prácticas de programación.
+          </p>
 
-          <div class="stat">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Proyectos realizados</div>
-          </div>
+        </article>
 
-          <div class="stat">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Soluciones lanzadas</div>
-          </div>
+        <article class="glass-card">
 
-          <div class="stat">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Ideas por construir</div>
-          </div>
+          <h3>Mentalidad competitiva</h3>
 
-        </div>
+          <p>
+            El gaming competitivo también forma parte de mi perfil.
+            Juegos como Overwatch, Valorant, Phasmophobia, Minecraft
+            y el ajedrez han fortalecido habilidades como estrategia,
+            toma de decisiones, resolución de problemas, concentración
+            y trabajo en equipo.
+          </p>
+
+        </article>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- SKILLS -->
-  <section id="skills">
+  <!-- =========================
+       HABILIDADES
+  ========================== -->
+
+  <section id="habilidades">
+
     <div class="container">
 
-      <div class="section-header">
-        <div>
-          <div class="section-number">02 / CAPACIDADES</div>
-          <h2>Core skills.</h2>
-        </div>
+      <div class="section-label">
+        Especialización
       </div>
 
-      <div class="skills">
+      <h2 class="section-title">
+        Lo que sé hacer.
+      </h2>
+
+      <div class="skills-grid">
 
         <article class="skill">
-          <span class="skill-number">01</span>
-          <h3>AI & Automation</h3>
-          <p>
-            Inteligencia artificial, automatización de procesos
-            y diseño de sistemas inteligentes.
-          </p>
-        </article>
-
-        <article class="skill">
-          <span class="skill-number">02</span>
+          <div class="skill-icon">💻</div>
           <h3>Software</h3>
           <p>
-            Desarrollo de aplicaciones web, APIs, arquitecturas
-            escalables y productos digitales.
+            Desarrollo de aplicaciones y soluciones digitales.
           </p>
         </article>
 
         <article class="skill">
-          <span class="skill-number">03</span>
-          <h3>Strategy</h3>
+          <div class="skill-icon">🧠</div>
+          <h3>Lógica</h3>
           <p>
-            Transformación digital, estrategia tecnológica
-            y resolución estructurada de problemas.
+            Algoritmos, resolución de problemas y pensamiento estructurado.
           </p>
         </article>
 
         <article class="skill">
-          <span class="skill-number">04</span>
-          <h3>Leadership</h3>
+          <div class="skill-icon">⚙️</div>
+          <h3>Sistemas</h3>
           <p>
-            Dirección de proyectos, equipos multidisciplinarios
-            y ejecución orientada a resultados.
+            Diseño, arquitectura y optimización de sistemas.
+          </p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🎨</div>
+          <h3>Frontend</h3>
+          <p>
+            Interfaces modernas, responsive y centradas en el usuario.
+          </p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🔐</div>
+          <h3>Buenas prácticas</h3>
+          <p>
+            Código limpio, organizado y mantenible.
+          </p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">📊</div>
+          <h3>Análisis</h3>
+          <p>
+            Análisis de problemas y diseño de soluciones.
+          </p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🚀</div>
+          <h3>Optimización</h3>
+          <p>
+            Rendimiento y mejora continua de aplicaciones.
+          </p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">♟️</div>
+          <h3>Estrategia</h3>
+          <p>
+            Pensamiento estratégico aplicado a tecnología y competición.
           </p>
         </article>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="experience">
+  <!-- =========================
+       PORTAFOLIO
+  ========================== -->
+
+  <section id="portfolio">
+
     <div class="container">
 
-      <div class="section-header">
-        <div>
-          <div class="section-number">03 / EXPERIENCIA</div>
-          <h2>Build.</h2>
-        </div>
+      <div class="section-label">
+        Portafolio
       </div>
+
+      <h2 class="section-title">
+        Soluciones que
+        <span>quiero construir.</span>
+      </h2>
+
+      <div class="portfolio-grid">
+
+        <article class="project">
+
+          <span class="project-number">
+            01
+          </span>
+
+          <h3>Web Applications</h3>
+
+          <p>
+            Desarrollo de aplicaciones web modernas, rápidas y
+            adaptables a diferentes dispositivos.
+          </p>
+
+          <a href="#" class="project-link">
+            Ver solución →
+          </a>
+
+        </article>
+
+
+        <article class="project">
+
+          <span class="project-number">
+            02
+          </span>
+
+          <h3>Software Solutions</h3>
+
+          <p>
+            Diseño de soluciones de software enfocadas en resolver
+            problemas reales mediante automatización y tecnología.
+          </p>
+
+          <a href="#" class="project-link">
+            Ver solución →
+          </a>
+
+        </article>
+
+
+        <article class="project">
+
+          <span class="project-number">
+            03
+          </span>
+
+          <h3>Automation</h3>
+
+          <p>
+            Herramientas y sistemas destinados a reducir tareas
+            repetitivas y mejorar la productividad.
+          </p>
+
+          <a href="#" class="project-link">
+            Ver solución →
+          </a>
+
+        </article>
+
+
+        <article class="project">
+
+          <span class="project-number">
+            04
+          </span>
+
+          <h3>Gaming Tools</h3>
+
+          <p>
+            Soluciones tecnológicas orientadas al gaming,
+            análisis, estadísticas y experiencias competitivas.
+          </p>
+
+          <a href="#" class="project-link">
+            Ver solución →
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAMING
+  ========================== -->
+
+  <section class="gaming" id="gaming">
+
+    <div class="container">
+
+      <div class="section-label">
+        Competitive Gaming
+      </div>
+
+      <h2 class="section-title">
+        Más que jugar.
+        <span>Analizar, mejorar y competir.</span>
+      </h2>
+
+      <div class="games-grid">
+
+        <article class="game">
+
+          <div class="game-icon">🎯</div>
+
+          <div>
+            <h3>Overwatch</h3>
+            <span>Jugador competitivo</span>
+          </div>
+
+        </article>
+
+
+        <article class="game">
+
+          <div class="game-icon">👻</div>
+
+          <div>
+            <h3>Phasmophobia</h3>
+            <span>Jugador competitivo</span>
+          </div>
+
+        </article>
+
+
+        <article class="game">
+
+          <div class="game-icon">⛏️</div>
+
+          <div>
+            <h3>Minecraft</h3>
+            <span>Jugador competitivo</span>
+          </div>
+
+        </article>
+
+
+        <article class="game">
+
+          <div class="game-icon">🔫</div>
+
+          <div>
+            <h3>Valorant</h3>
+            <span>Jugador competitivo</span>
+          </div>
+
+        </article>
+
+
+        <article class="game">
+
+          <div class="game-icon">♟️</div>
+
+          <div>
+            <h3>Ajedrez</h3>
+            <span>Estrategia y competición</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCIA / PERFIL
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">
+        Mi enfoque
+      </div>
+
+      <h2 class="section-title">
+        Pensar. Crear.
+        <span>Optimizar.</span>
+      </h2>
 
       <div class="timeline">
 
-        <article class="job">
-          <div class="job-date">2023 — PRESENTE</div>
+        <article class="timeline-item">
 
-          <div>
-            <h3>Director de Tecnología</h3>
-            <div class="company">Empresa / Startup</div>
-
-            <p>
-              Liderazgo tecnológico, definición de arquitectura,
-              automatización de operaciones y desarrollo de
-              nuevos productos digitales.
-            </p>
+          <div class="timeline-date">
+            SOFTWARE ENGINEERING
           </div>
+
+          <h3>Construcción de soluciones</h3>
+
+          <p>
+            Enfocado principalmente en ingeniería de software,
+            desarrollo web, arquitectura de aplicaciones y
+            resolución de problemas mediante código.
+          </p>
+
         </article>
 
-        <article class="job">
-          <div class="job-date">2020 — 2023</div>
 
-          <div>
-            <h3>Lead Developer</h3>
-            <div class="company">Empresa Tecnológica</div>
+        <article class="timeline-item">
 
-            <p>
-              Diseño y desarrollo de plataformas digitales,
-              APIs y soluciones orientadas a mejorar procesos
-              empresariales.
-            </p>
+          <div class="timeline-date">
+            COMPETITIVE GAMING
           </div>
+
+          <h3>Mentalidad competitiva</h3>
+
+          <p>
+            La experiencia en videojuegos competitivos aporta
+            pensamiento rápido, análisis de situaciones, adaptación,
+            comunicación y búsqueda constante de mejora.
+          </p>
+
         </article>
 
-        <article class="job">
-          <div class="job-date">2018 — 2020</div>
 
-          <div>
-            <h3>Software Engineer</h3>
-            <div class="company">Empresa Digital</div>
+        <article class="timeline-item">
 
-            <p>
-              Desarrollo de aplicaciones web y participación
-              en proyectos de transformación digital.
-            </p>
+          <div class="timeline-date">
+            FUTURO
           </div>
+
+          <h3>Crear tecnología que destaque</h3>
+
+          <p>
+            Mi objetivo es seguir creciendo como ingeniero de software
+            y desarrollar proyectos que combinen tecnología,
+            innovación y experiencias digitales de alto nivel.
+          </p>
+
         </article>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio">
+  <!-- =========================
+       CONTACTO
+  ========================== -->
+
+  <section class="contact" id="contacto">
+
     <div class="container">
 
-      <div class="section-header">
-        <div>
-          <div class="section-number">04 / PORTAFOLIO</div>
-          <h2>Soluciones.</h2>
-        </div>
-
-        <p class="section-intro">
-          Proyectos creados para convertir desafíos empresariales
-          en sistemas medibles y escalables.
-        </p>
+      <div class="section-label">
+        Contacto
       </div>
-
-      <div class="solutions">
-
-        <article class="solution" data-number="01">
-          <span class="solution-tag">Artificial Intelligence</span>
-
-          <h3>AI Business Copilot</h3>
-
-          <p>
-            Asistente inteligente para analizar información,
-            automatizar tareas y ayudar a los equipos a tomar
-            decisiones más rápidas.
-          </p>
-
-          <a href="#">Ver proyecto →</a>
-        </article>
-
-
-        <article class="solution" data-number="02">
-          <span class="solution-tag">Automation</span>
-
-          <h3>Intelligent Operations</h3>
-
-          <p>
-            Plataforma para automatizar procesos repetitivos,
-            conectar sistemas y reducir trabajo operativo manual.
-          </p>
-
-          <a href="#">Ver proyecto →</a>
-        </article>
-
-
-        <article class="solution" data-number="03">
-          <span class="solution-tag">Data</span>
-
-          <h3>Business Intelligence</h3>
-
-          <p>
-            Sistema de dashboards y analítica para transformar
-            datos empresariales en información accionable.
-          </p>
-
-          <a href="#">Ver proyecto →</a>
-        </article>
-
-
-        <article class="solution" data-number="04">
-          <span class="solution-tag">Digital Products</span>
-
-          <h3>Digital Platform</h3>
-
-          <p>
-            Diseño y desarrollo de productos digitales escalables
-            desde la conceptualización hasta producción.
-          </p>
-
-          <a href="#">Ver proyecto →</a>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container contact-content">
-
-      <div class="section-number">05 / CONTACTO</div>
 
       <h2>
-        No pain<br>
-        No gain
+        ¿Construimos algo?
       </h2>
 
       <p>
-        ¿Tienes un problema interesante que resolver?
-        Hablemos.
+        Estoy abierto a proyectos, oportunidades y colaboraciones.
       </p>
 
       <div class="contact-links">
-        <a href="mailto:tuemail@ejemplo.com">
-          jaensajm0510@gmail.com
+
+        <a
+          class="contact-link"
+          href="mailto:jaensajm0510@gmail.com"
+        >
+          ✉️ jaensajm0510@gmail.com
         </a>
 
-        <a href="https://linkedin.com/" target="_blank">
-          
+        <a
+          class="contact-link"
+          href="https://instagram.com/maik0_10"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📸 Instagram · @maik0_10
         </a>
 
-        <a href="https://github.com/" target="_blank">
-          
-        </a>
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <span>© 2026 Tu Nombre</span>
-    <span>Designed for the future.</span>
+
+    © <span id="year"></span> Maik.
+    Software Engineer · Competitive Gamer
+
   </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    // Pequeño efecto de aparición al hacer scroll
-    const elements = document.querySelectorAll(
-      ".skill, .solution, .job, .stat"
-    );
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    // Año automático
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    elements.forEach(element => {
-      element.style.opacity = "0";
-      element.style.transform = "translateY(25px)";
-      element.style.transition = "opacity .7s ease, transform .7s ease";
-      observer.observe(element);
+
+    // Modo oscuro / claro
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+
+      document.body.classList.toggle("dark");
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
+
     });
+
+
+    // Animación sencilla al hacer scroll
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.style.opacity = "1";
+              entry.target.style.transform =
+                "translateY(0)";
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    document
+      .querySelectorAll(
+        ".glass-card, .skill, .project, .game, .timeline-item"
+      )
+      .forEach((element) => {
+
+        element.style.opacity = "0";
+        element.style.transform =
+          "translateY(25px)";
+        element.style.transition =
+          "opacity 0.7s ease, transform 0.7s ease";
+
+        observer.observe(element);
+
+      });
+
   </script>
 
 </body>
