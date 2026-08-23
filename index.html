@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Maik | Innovación & Tecnología</title>
+  <meta
+    name="description"
+    content="CV personal y portafolio profesional de Tu Nombre."
+  >
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0b;
+      --card: #101010;
+      --text: #f5f5f5;
+      --muted: #929292;
+      --accent: #ffffff;
+      --line: #242424;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5, 5, 5, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 5% 80px;
+      background:
+        radial-gradient(circle at 75% 35%, #1d1d1d 0, transparent 30%),
+        radial-gradient(circle at 20% 80%, #111 0, transparent 30%),
+        #050505;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      right: -200px;
+      top: 100px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 70px rgba(255,255,255,.015),
+        0 0 0 140px rgba(255,255,255,.01);
+    }
+
+    .hero-content {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 9vw, 120px);
+      line-height: .9;
+      letter-spacing: -6px;
+      max-width: 900px;
+      margin-bottom: 35px;
+    }
+
+    .hero h1 span {
+      color: #777;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      border: 1px solid #444;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+
+    .btn.primary {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: white;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 5%;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+      margin-bottom: 60px;
+    }
+
+    .section-number {
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 6vw, 72px);
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    .section-intro {
+      max-width: 420px;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 80px;
+    }
+
+    .about-text {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    .about-text strong {
+      color: white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      padding: 30px 20px;
+      background: var(--card);
+      transition: .3s;
+    }
+
+    .skill:hover {
+      border-color: #666;
+      transform: translateY(-5px);
+    }
+
+    .skill-number {
+      color: #555;
+      font-size: 11px;
+    }
+
+    .skill h3 {
+      margin: 25px 0 10px;
+      font-size: 18px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* EXPERIENCE */
+    .experience {
+      background: #080808;
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 50px;
+      padding: 35px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .job-date {
+      color: #666;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .job h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: #999;
+      margin-bottom: 15px;
+    }
+
+    .job p {
+      color: #888;
+      max-width: 700px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      background: var(--bg);
+    }
+
+    .solutions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .solution {
+      min-height: 350px;
+      padding: 40px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.04), transparent 50%),
+        #0b0b0b;
+      position: relative;
+      overflow: hidden;
+      transition: .4s;
+    }
+
+    .solution:hover {
+      transform: translateY(-8px);
+      border-color: #555;
+    }
+
+    .solution::before {
+      content: attr(data-number);
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-size: 90px;
+      font-weight: 700;
+      color: rgba(255,255,255,.025);
+    }
+
+    .solution-tag {
+      color: #777;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .solution h3 {
+      font-size: 34px;
+      margin: 50px 0 15px;
+      max-width: 400px;
+    }
+
+    .solution p {
+      color: #888;
+      max-width: 500px;
+    }
+
+    .solution a {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #555;
+      padding-bottom: 5px;
+    }
+
+    /* CONTACT */
+    .contact {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at center, #151515 0, #050505 50%);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-content {
+      width: 100%;
+      text-align: center;
+    }
+
+    .contact h2 {
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+
+    .contact p {
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: #aaa;
+      font-size: 13px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 25px 5%;
+      border-top: 1px solid var(--line);
+      color: #555;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .solutions {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .solution {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      section {
+        padding: 80px 6%;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .solution {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" class="logo">TN.</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">Perfil</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#portfolio">Soluciones</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Innovación · Tecnología · Estrategia
+      </div>
+
+      <h1>
+        Maik<br>
+        <span>construye el futuro.</span>
+      </h1>
+
+      <p class="hero-description">
+        Profesional enfocado en transformar problemas complejos
+        en soluciones tecnológicas simples, escalables y de alto impacto.
+      </p>
+
+      <div class="buttons">
+        <a href="#portfolio" class="btn primary">
+          Ver soluciones
+        </a>
+
+        <a href="#contact" class="btn">
+          Contactar
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-number">01 / PERFIL</div>
+          <h2>Think big.</h2>
+        </div>
+
+        <p class="section-intro">
+          Una combinación de visión estratégica, tecnología
+          y ejecución orientada a resultados.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          Mi objetivo es crear mi propia empresa 
+          <strong>desarroladora</strong>.
+          Me interesa especialmente la intersección entre
+          tecnología, automatización, inteligencia artificial
+          y negocios.
+        </div>
+
+        <div class="stats">
+
+          <div class="stat">
+            <div class="stat-number">08+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">35+</div>
+            <div class="stat-label">Proyectos realizados</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Soluciones lanzadas</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Ideas por construir</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-number">02 / CAPACIDADES</div>
+          <h2>Core skills.</h2>
+        </div>
+      </div>
+
+      <div class="skills">
+
+        <article class="skill">
+          <span class="skill-number">01</span>
+          <h3>AI & Automation</h3>
+          <p>
+            Inteligencia artificial, automatización de procesos
+            y diseño de sistemas inteligentes.
+          </p>
+        </article>
+
+        <article class="skill">
+          <span class="skill-number">02</span>
+          <h3>Software</h3>
+          <p>
+            Desarrollo de aplicaciones web, APIs, arquitecturas
+            escalables y productos digitales.
+          </p>
+        </article>
+
+        <article class="skill">
+          <span class="skill-number">03</span>
+          <h3>Strategy</h3>
+          <p>
+            Transformación digital, estrategia tecnológica
+            y resolución estructurada de problemas.
+          </p>
+        </article>
+
+        <article class="skill">
+          <span class="skill-number">04</span>
+          <h3>Leadership</h3>
+          <p>
+            Dirección de proyectos, equipos multidisciplinarios
+            y ejecución orientada a resultados.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-number">03 / EXPERIENCIA</div>
+          <h2>Build.</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <article class="job">
+          <div class="job-date">2023 — PRESENTE</div>
+
+          <div>
+            <h3>Director de Tecnología</h3>
+            <div class="company">Empresa / Startup</div>
+
+            <p>
+              Liderazgo tecnológico, definición de arquitectura,
+              automatización de operaciones y desarrollo de
+              nuevos productos digitales.
+            </p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-date">2020 — 2023</div>
+
+          <div>
+            <h3>Lead Developer</h3>
+            <div class="company">Empresa Tecnológica</div>
+
+            <p>
+              Diseño y desarrollo de plataformas digitales,
+              APIs y soluciones orientadas a mejorar procesos
+              empresariales.
+            </p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-date">2018 — 2020</div>
+
+          <div>
+            <h3>Software Engineer</h3>
+            <div class="company">Empresa Digital</div>
+
+            <p>
+              Desarrollo de aplicaciones web y participación
+              en proyectos de transformación digital.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-number">04 / PORTAFOLIO</div>
+          <h2>Soluciones.</h2>
+        </div>
+
+        <p class="section-intro">
+          Proyectos creados para convertir desafíos empresariales
+          en sistemas medibles y escalables.
+        </p>
+      </div>
+
+      <div class="solutions">
+
+        <article class="solution" data-number="01">
+          <span class="solution-tag">Artificial Intelligence</span>
+
+          <h3>AI Business Copilot</h3>
+
+          <p>
+            Asistente inteligente para analizar información,
+            automatizar tareas y ayudar a los equipos a tomar
+            decisiones más rápidas.
+          </p>
+
+          <a href="#">Ver proyecto →</a>
+        </article>
+
+
+        <article class="solution" data-number="02">
+          <span class="solution-tag">Automation</span>
+
+          <h3>Intelligent Operations</h3>
+
+          <p>
+            Plataforma para automatizar procesos repetitivos,
+            conectar sistemas y reducir trabajo operativo manual.
+          </p>
+
+          <a href="#">Ver proyecto →</a>
+        </article>
+
+
+        <article class="solution" data-number="03">
+          <span class="solution-tag">Data</span>
+
+          <h3>Business Intelligence</h3>
+
+          <p>
+            Sistema de dashboards y analítica para transformar
+            datos empresariales en información accionable.
+          </p>
+
+          <a href="#">Ver proyecto →</a>
+        </article>
+
+
+        <article class="solution" data-number="04">
+          <span class="solution-tag">Digital Products</span>
+
+          <h3>Digital Platform</h3>
+
+          <p>
+            Diseño y desarrollo de productos digitales escalables
+            desde la conceptualización hasta producción.
+          </p>
+
+          <a href="#">Ver proyecto →</a>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container contact-content">
+
+      <div class="section-number">05 / CONTACTO</div>
+
+      <h2>
+        Let's build<br>
+        something meaningful.
+      </h2>
+
+      <p>
+        ¿Tienes un problema interesante que resolver?
+        Hablemos.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:tuemail@ejemplo.com">
+          tuemail@ejemplo.com
+        </a>
+
+        <a href="https://linkedin.com/" target="_blank">
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/" target="_blank">
+          GitHub
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Tu Nombre</span>
+    <span>Designed for the future.</span>
+  </footer>
+
+
+  <script>
+    // Pequeño efecto de aparición al hacer scroll
+    const elements = document.querySelectorAll(
+      ".skill, .solution, .job, .stat"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elements.forEach(element => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(25px)";
+      element.style.transition = "opacity .7s ease, transform .7s ease";
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
